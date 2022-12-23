@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial, helvetica, sans-serif;
+
+  
+}
+
+h4 {
+margin: 0.5rem auto;
+}
+
+p {
+  padding-top: 1rem;
+}
+
+
+.main-website-layout {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template:  5% 50% auto 5% / 20% 40% 40%;
+  overflow-x: hidden;
+
+  grid-template-areas: 
+  "side nav nav"
+  "side txt-1 txt-2"
+  "side projects projects"
+  "side footer footer";
+}
+
+.blog-website-layout {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template:  5% auto 5% / 20% 40% 40%;
+  overflow-x: hidden;
+
+  grid-template-areas: 
+  "side nav nav"
+  "side txt-1 txt-1"
+  "side footer footer";
+}
+
+.inside {
+  background-color:#FFFBE9;
+}
+
+.navigation {
+  grid-area: nav;
+  border-bottom: 1px solid #000;
+  position: fixed;
+  top: 0rem;
+  width: 80vw;
+  margin-left: 20%;
+  height: 5%;
+
+}
+
+.nav-links {
+  display: inline-block;
+  padding: 0.6rem;
+
+}
+.nav-links:hover {
+  background-color: #678983;
+  color: #fff;
+}
+
+button {
+  background-color: #F0E9D2;
+  border-radius: 10%;
+  padding:0.2rem;
+  cursor: pointer;
+}
+
+.side-content {
+  background-color:#678983;
+  grid-area: side;
+  padding: 5rem 0rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #fff;
+  overflow-y: hidden;
+  position:fixed;
+  width: 20vw;
+  height: 100vh;
+  
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+em {
+  margin-left: 2rem;
+
+}
+
+aside >p {
+  line-height: 1.5rem;
+  padding: 2rem 2rem 0rem 2rem;
+  text-indent: 2rem;
+  text-align:justify;
+  word-spacing: 0rem;
+
+}
+
+.basic-info {
+  grid-area: txt-1;
+  text-align: justify;
+  padding: 2.5rem 1rem 0rem 1rem;
+  
+}
+
+
+
+.skills-info {
+  grid-area: txt-2;
+  padding: 2.5rem 0rem 0rem 0rem;
+}
+
+.projects {
+  grid-area: projects;
+  padding:2.5rem 0rem 20rem 1rem;
+}
+
+
+.blog {
+  grid-area: txt-1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  text-align: center;
+  
+}
+
+.blog h3 {
+ margin: auto;
+}
+
+.blog p {
+  text-align: justify;
+  text-indent: 2rem;
+}
+
+
+.blog-pic {
+ padding: 1rem 0rem;
+ width: 80vw;
+}
+
+
+.footer {
+  grid-area: footer;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  background-image: url("/assets/images/ajpic.jpg");
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  
+}
+
+img {
+  width: 5rem;
+}
+
+.skills-info img:hover {
+  transform: scale(1.1);
+  
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  gap: 0.3rem ;
+  padding-top: 1rem;
+  
+}
+
+.tech-stack {
+  width: 80%;
+  height: 12rem;
+  margin: 0.7rem auto;
+  border-radius: 5%;
+  display: flex;
+  background-color: #FFFBE9;
+}
+
+.stack-icon {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 15%;
+  background-color: #F0E9D2;
+  margin: 0.5rem;
+  text-align: center;
+
+}
+
+.icon {
+  width: 2rem;
+}
+
+.project-container {
+  width: 90%;
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+
+.box {
+  width: 20vw;
+  height: 50vh;
+  margin: 1.5rem 1rem;
+  padding-top: 1rem;
+  border: 1px solid black;
+}
+
+
+
+.box-content {
+  width: 80%;
+  height: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.box-description {
+  width: 80%;
+  height: 30%;
+  border-top: 1px solid #000;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.project-image {
+  width: 10rem;
+}
+
+@media only screen and (max-width:426px) {
+
+
+  .main-website-layout {
+    display: grid;
+
+    grid-template:  auto / auto;
+    grid-template-areas: 
+    "nav"
+    "side"
+    "txt-1"
+    "txt-2"
+    "projects"
+    "footer"
+    ;
+  }  
+
+  .blog-website-layout {
+    display: grid;
+
+    grid-template:  auto  / auto;
+    grid-template-areas: 
+    "side"
+    "nav"
+    "txt-1"
+    "footer"
+    ;
+  }  
+
+  .side-content {
+    width: 100vw;
+    position: relative;
+    margin: 0;
+    padding-top: 2.5rem;
+    z-index: -1;
+  }
+
+  
+
+  .navigation {
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+  }
+
+  .box {
+    width: 70vw;
+    height: 55vh;
+    margin: 1.5rem 1rem;
+    padding-top: 1rem;
+    border: 1px solid black;
+  }
+  
+  .footer {
+    height: 5vh;
+  }
+
+  .skills-info{
+    padding-left: 1rem;
+  }
+
+  .blog-pic {
+    width: 80vw;
+    margin: auto;
+  }
+
+  .blog {
+    width: 100vw;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width:427px) and (max-width:769px) {
+
+
+  .main-website-layout {
+    display: grid;
+
+    grid-template:  auto / 40% 60%;
+    grid-template-areas: 
+    "side nav"
+    "side txt-1"
+    "side txt-2"
+    "side projects"
+    "side footer"
+    ;
+  }  
+
+  .blog-website-layout {
+    display: grid;
+
+    grid-template:  auto / 40% 60%;
+    grid-template-areas: 
+    "side nav"
+    "side txt-1"
+    "side footer"
+    ;
+  }  
+
+  .side-content {
+    width: 40vw;
+    position: fixed;
+    margin: 0;
+    padding-top: 3rem;
+  }
+
+  
+
+  .navigation {
+    width: 100vw;
+    position: fixed;
+    margin-left: 40%;
+    height: 2.4rem;
+  }
+
+  .basic-info {
+    padding: 3rem 2rem 0rem 2rem;
+  }
+
+  .skills-info {
+    padding: 2rem 2rem 0rem 2rem;
+  } 
+
+  .projects {
+    padding: 0rem 2rem 0rem 2rem;
+  }
+  .box {
+    width: 70vw;
+    height: 55vh;
+    margin: 1.5rem 1rem;
+    padding-top: 1rem;
+    border: 1px solid black;
+  }
+
+  .footer {
+    height: 5vh;
+  }
+
+  .blog-pic {
+    width: 40vw;
+    margin: auto;
+  }
+
+  .blog {
+    width: 60vw;
+    padding: 1rem;
+  }
+  
+}
